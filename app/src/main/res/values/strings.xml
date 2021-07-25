@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">FFmpegLearn</string>
+    <string name="jni_base">JNI 基础</string>
+    <string name="jni_base_type">基础类型</string>
+    <string name="get_object">获取对象</string>
+    <string name="dynamic_register">动态注册</string>
+    <string name="throws_exception">抛出异常</string>
+    <string name="run_thread">线程操作</string>
+    <string name="bind_thread">绑定线程</string>
+</resources>
