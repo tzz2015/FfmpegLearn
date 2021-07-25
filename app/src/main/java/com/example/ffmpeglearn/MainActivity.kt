@@ -4,9 +4,10 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.TextView
+import com.example.ffmpeglearn.base.BaseActivity
 import com.example.ffmpeglearn.databinding.ActivityMainBinding
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : BaseActivity() {
 
     private lateinit var binding: ActivityMainBinding
 
@@ -18,11 +19,17 @@ class MainActivity : AppCompatActivity() {
         initClick()
     }
 
-    private fun initClick() {
+    override fun initClick() {
         binding.btnJni.setOnClickListener {
-            startActivity(Intent(this,JniActivity::class.java))
+            startActivity(Intent(this, JniActivity::class.java))
         }
     }
+
+    override fun initView() {
+        binding.tvShow.text = stringFromJNI()
+    }
+
+    external fun stringFromJNI(): String
 
 
 }

@@ -45,7 +45,7 @@ Java_com_example_ffmpeglearn_JniActivity_pushData(JNIEnv *env, jobject thiz,
 
     //5\. 接收 Java 传递过来的 long 值
     long l_long = l;
-    LOGE("long-> %ld", l_long);
+    LOGE("long-> %ld", l_long)
 
     //6\. 接收 Java 传递过来的 float 值
     float f_float = f;
