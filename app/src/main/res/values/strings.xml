@@ -7,4 +7,5 @@
     <string name="throws_exception">抛出异常</string>
     <string name="run_thread">线程操作</string>
     <string name="bind_thread">绑定线程</string>
+    <string name="request_permissions">申请权限</string>
 </resources>
