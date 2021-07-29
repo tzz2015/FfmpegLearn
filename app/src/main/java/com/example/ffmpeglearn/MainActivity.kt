@@ -5,6 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 import com.example.ffmpeglearn.base.BaseActivity
 import com.example.ffmpeglearn.databinding.ActivityMainBinding
+import com.example.ffmpeglearn.utils.toast
 import pub.devrel.easypermissions.AfterPermissionGranted
 import pub.devrel.easypermissions.EasyPermissions
 
@@ -45,8 +46,7 @@ class MainActivity : BaseActivity() {
             Manifest.permission.RECORD_AUDIO
         )
         if (EasyPermissions.hasPermissions(this, *perms)) {
-            // Already have permission, do the thing
-            // ...
+            toast("已经有权限了")
         } else {
             // Do not have permissions, request them now
             EasyPermissions.requestPermissions(this, "", RC_CAMERA_AND_LOCATION, *perms)
