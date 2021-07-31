@@ -5,7 +5,9 @@ import android.content.Intent
 import android.os.Bundle
 import com.example.ffmpeglearn.base.BaseActivity
 import com.example.ffmpeglearn.databinding.ActivityMainBinding
+import com.example.ffmpeglearn.utils.CommonUtils
 import com.example.ffmpeglearn.utils.toast
+import com.example.ffmpeglearn.video.VideoEnterActivity
 import pub.devrel.easypermissions.AfterPermissionGranted
 import pub.devrel.easypermissions.EasyPermissions
 
@@ -20,10 +22,8 @@ class MainActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        initClick()
     }
 
     override fun initClick() {
@@ -31,6 +31,9 @@ class MainActivity : BaseActivity() {
             startActivity(Intent(this, JniActivity::class.java))
         }
         binding.btnPermissions.setOnClickListener { requestAllPermissions() }
+        binding.btnVideo.setOnClickListener {
+            startActivity(Intent(this, VideoEnterActivity::class.java))
+        }
     }
 
     /**
@@ -46,6 +49,8 @@ class MainActivity : BaseActivity() {
             Manifest.permission.RECORD_AUDIO
         )
         if (EasyPermissions.hasPermissions(this, *perms)) {
+            CommonUtils.copyAssetsDirToSDCard(this, "byteflow", "/sdcard")
+
             toast("已经有权限了")
         } else {
             // Do not have permissions, request them now

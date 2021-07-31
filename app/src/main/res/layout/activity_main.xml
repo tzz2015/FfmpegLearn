@@ -23,6 +23,14 @@
         android:text="@string/request_permissions"
         app:layout_constraintStart_toEndOf="@+id/btn_jni"
         app:layout_constraintTop_toTopOf="parent" />
+    <androidx.appcompat.widget.AppCompatButton
+        android:text="@string/video_play"
+        android:id="@+id/btn_video"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_margin="10dp"
+        app:layout_constraintStart_toEndOf="@+id/btn_permissions"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
 
     <ScrollView
         android:padding="10dp"
