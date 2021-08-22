@@ -18,6 +18,9 @@ class VideoEnterActivity : BaseActivity() {
         mBinding.btnNativeWindow.setOnClickListener {
             startActivity(Intent(this, NativeMediaPlayerActivity::class.java))
         }
+        mBinding.btnEsPlayer.setOnClickListener {
+            startActivity(Intent(this, GlMediaPlayerActivity::class.java))
+        }
     }
 
     override fun initView() {
